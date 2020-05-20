@@ -4,6 +4,11 @@ import "../css/navbar.css";
 import { Link } from "react-router-dom";
 
 const Nabvar = () => {
+    const NavLink = {
+        color: "#000",
+        textDecoration: "none",
+        height: "100%"
+    }
     return ( 
         <nav>
             <div className="logo">
@@ -11,12 +16,16 @@ const Nabvar = () => {
                 <h1>RTH</h1>
             </div>
             <ul>
+                <Link style={NavLink} to="/">
                 <li>
-                    <a href="#">Record Data</a>
+                    Record Data
                 </li>
+                </Link>
+                <Link style={NavLink} to="/edit">
                 <li>
-                    <a href="#">Edit Data</a>
+                    Edit Data
                 </li>
+                </Link>
             </ul>
         </nav>
      );

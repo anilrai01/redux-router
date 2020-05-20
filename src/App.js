@@ -10,10 +10,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
       <Navbar/>
-      
-      <Route path="/" component={RecordData}/>
-      <Route path="/edit" component={EditData}/>
-
+        <Switch>
+          <Route path="/" exact component={RecordData}/>
+          <Route path="/edit" component={EditData}/>
+        </Switch>
       </div>
     </BrowserRouter>
   );
