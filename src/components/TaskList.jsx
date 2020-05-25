@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import ButtonUI from "./FormComponent/Button"
+import {connect} from "react-redux";
 
 const TaskTable = styled.table`
     width: 70%;
@@ -27,13 +28,18 @@ const TableHeading = styled.th`
 const TableData = styled.td`
     padding: 12px 15px;
 `
+const mapStateToProps = state => {
+    return {
+        taskData: state.taskData
+    }
+}
 
-const TaskList = () => {
+const TaskList = (props) => {
     return ( 
 
         <TaskTable>
             <TableRow>
-                <TableHeading>Task Name:</TableHeading>
+                <TableHeading>Task Name</TableHeading>
                 <TableHeading>Task Description</TableHeading>
                 <TableHeading>Status</TableHeading>
                 <TableHeading></TableHeading>
@@ -56,9 +62,19 @@ const TaskList = () => {
                 <TableData>Complete</TableData>
                 <ButtonUI text="Edit" color="#2e9e4e"/>
             </TableRow>
+            {
+                props.taskData.map(el => 
+                    <TableRow key={el.taskID}>
+                        <TableData>{el.taskName}</TableData>
+                        <TableData>{el.taskDesc}</TableData>
+                        <TableData>{el.taskStat}</TableData>
+                        <ButtonUI text="Edit" color="#2e9e4e"/>
+                    </TableRow>
+                )
+            }
         </TaskTable>
 
      );
 }
  
-export default TaskList;
+export default connect(mapStateToProps, null)(TaskList);

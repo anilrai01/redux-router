@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from "../logo.svg";
 import "../css/navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nabvar = () => {
-    const NavLink = {
+    const LinkStyle = {
         color: "#000",
         textDecoration: "none",
         height: "100%"
@@ -16,16 +16,16 @@ const Nabvar = () => {
                 <h1>RTH</h1>
             </div>
             <ul>
-                <Link style={NavLink} to="/">
+                <NavLink activeClassName="activeLink" style={LinkStyle} exact to="/">
                 <li>
                     Record Data
                 </li>
-                </Link>
-                <Link style={NavLink} to="/edit">
+                </NavLink>
+                <NavLink activeClassName="activeLink" style={LinkStyle} to="/edit">
                 <li>
                     Edit Data
                 </li>
-                </Link>
+                </NavLink>
             </ul>
         </nav>
      );

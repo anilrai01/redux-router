@@ -52,3 +52,8 @@ li:hover{
 .logosvg{
     width: 100%;height: 100%;
 }
+
+.activeLink{
+    background: #1e90ff;
+    color: #fff !important;
+}
