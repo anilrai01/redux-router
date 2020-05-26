@@ -7,4 +7,11 @@ const AddTask = (data) => {
     }
 }
 
-export { AddTask };
+const EditTask = data => {
+    return {
+        type: actionType.edit,
+        payload: data
+    }
+}
+
+export { AddTask, EditTask };

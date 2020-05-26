@@ -12,6 +12,9 @@ const Button = styled.button`
     color: #fff;
     font-size: 18px;
     transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    text-decoration: none !important;
     &:hover{
         
         background: #fff;
@@ -19,10 +22,11 @@ const Button = styled.button`
         color: #1e90ff;
     }
 
-    background: ${props => props.color};
+    // background: ${props => props.color};
+    background: #1e90ff;
 
     ${props => props.type === "Edit" ? css`
-        width: 80%;
+        background: #2e9e4e;
         border-radius: 0;
         padding: 8px 12px;
         font-size: 16px;
