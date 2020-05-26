@@ -1,5 +1,5 @@
-import React from 'react'
-import styled, {css} from "styled-components";
+import React from "react";
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
     outline: none;
@@ -22,25 +22,48 @@ const Button = styled.button`
         color: #1e90ff;
     }
 
-    // background: ${props => props.color};
+    // background: ${(props) => props.color};
     background: #1e90ff;
 
-    ${props => props.type === "Edit" ? css`
-        background: #2e9e4e;
-        border-radius: 0;
-        padding: 8px 12px;
-        font-size: 16px;
-        &:hover{
-            border: 1px solid ${props => props.color};
-            color: ${props => props.color};
-        }
-    ` : null}
-`
+    ${(props) =>
+      props.type === "Edit"
+        ? css`
+            background: #2e9e4e;
+            border-radius: 0;
+            padding: 8px 12px;
+            font-size: 16px;
+            &:hover {
+              border: 1px solid #2e9e4e;
+              color: #2e9e4d;
+            }
+          `
+        : null}
+
+    ${(props) =>
+      props.type === "Delete"
+        ? css`
+            background: #d14949;
+            border-radius: 0;
+            padding: 8px 12px;
+            font-size: 16px;
+            &:hover {
+              border: 1px solid #d14949;
+              color: #d14949;
+            }
+          `
+        : null}
+`;
 
 const ButtonUI = (props) => {
-    return ( 
-        <Button color={props.color} type={props.text}>{props.text}</Button>
-     );
-}
- 
+  return (
+    <Button
+      color={props.color}
+      type={props.text}
+      onClick={props.handleClick}
+    >
+      {props.text}
+    </Button>
+  );
+};
+
 export default ButtonUI;

@@ -41,7 +41,6 @@ const RecordData = () => {
             <TaskForm />
         </LeftPanel>
         <RightPanel>
-            <h2><i>Some of your Pending tasks</i></h2>
             <TaskList mode="Record"/>
             {/* <h3>{new Date().getTime()}</h3> */}
         </RightPanel>

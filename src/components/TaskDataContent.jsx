@@ -14,7 +14,6 @@ const EditContent = styled.div`
 const TaskDataContent = () => {
   return (
     <EditContent>
-      <h1>Edit Task Data</h1>
       <TaskList />
     </EditContent>
   );

@@ -38,6 +38,9 @@ const addActionReducer = (state = initialState, action) => {
         el.taskID === action.payload.taskID ? (el = action.payload) : el
       );
       return state;
+    case actionType.del:
+      state = state.filter((el) => el.taskID !== action.payload);
+      return state;
     default:
       return state;
   }
